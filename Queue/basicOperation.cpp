@@ -20,15 +20,8 @@ class Queue{
 	//push the value at the back
 	void push(int val){
 		cout<<"pushing the val: "<<val<<" at the back of queue\n";
-		if(isEmpty())
-		{
-		    A[end]=val;
-		}
-		else
-		{
-		    end=end+1;
-		    A[end]=val;
-		}
+		A[end]=val;
+		end++;
 		
 	}
 	
@@ -39,30 +32,18 @@ class Queue{
 	
 	void pop(){
 		cout<<"removing the first element\n";
-		if(isEmpty())
-		{
-		    return;
-		}
-		else if(start==end)
-		{
-		    start=0;
-		    end=0;
-		}
-		else
-		{
-		    start=start+1;
-		}
+		start=start+1;
 	}
 	
 	int size(){
 		cout<<"return the size of the queue\n";
 	
-		return 0;
+		return A.size();
 	}
 	
 	bool isEmpty(){
 		cout<<"returning if the queue is empty\n";
-		if(start==0&& end==0){
+		if(start==end){
 		    return true;
 		}
 		false;
