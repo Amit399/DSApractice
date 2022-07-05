@@ -4,7 +4,7 @@ vector<int>countsort(vector<int> &A)
 {
     int max=A[0];
     int n=A.size();
-    vector<int>c;
+    
     vector<int>O;
     for(int i=1; i<n; i++)
     {
@@ -13,20 +13,18 @@ vector<int>countsort(vector<int> &A)
             max=A[i];
         }
     }
-    for(int l=0; l<=max; l++)
+    vector<int>c(max+1);
+    
+    for(int i=0; i<n; i++)
     {
-        c[l]=0;
+        c[A[i]]++;
     }
-    for(int k=0; k<n; k++)
+    for(int i=0;i<=max;i++)
     {
-        c[A[k]]++;
-    }
-    for(int j=0;j<=max;j++)
-    {
-        int s=c[j];
+        int s=c[i];
         while(s!=0)
         {
-            O.push_back(j);
+            O.push_back(i);
             s--;
         }
     }
