@@ -20,7 +20,7 @@ class Stack{
  
 	//push the value at the back
 	void push(int val){
-		cout<<"pushing the val: "<<val<<" at the back of queue\n";
+		cout<<"pushing the val: "<<val<<" at the front of Stack\n";
 		Node* temp= new Node;
 		temp->value=val;
 		if(isEmpty())
@@ -66,12 +66,12 @@ class Stack{
 	}
  
 	int size(){
-		cout<<"return the size of the queue\n";
+		cout<<"return the size of the Stack\n";
 		return n;
 	}
  
 	bool isEmpty(){
-		cout<<"returning if the queue is empty\n";
+		cout<<"returning if the Stack is empty\n";
 		if(!start)
 		{
 		    return true;
