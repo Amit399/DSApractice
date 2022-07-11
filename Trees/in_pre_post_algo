@@ -1,0 +1,27 @@
+struct Node(){
+Node* root;
+Node* left;
+Node* right;
+int val;
+};
+void preorder(Node* root){
+if(!root)
+{return}
+cout<<root->value;
+preorder(root->left);
+preorder(root->right);
+}
+void inorder(Node* root){
+if(!root)
+{return}
+inorder(root->left);
+cout<<root->value;
+inorder(root->right);
+}
+void postorder(Node* root){
+if(!root)
+{return}
+postorder(root->left);
+postorder(root->right);
+cout<<root->value;
+}
