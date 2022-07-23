@@ -1,0 +1,47 @@
+class Solution {
+public:
+    string bestHand(vector<int>& ranks, vector<char>& suits) {
+        int n=0;
+        for(int i=0; i<suits.size()-1; i++)
+        {
+            if((suits[i])==suits[i+1])
+            {
+                n++;
+            }
+        }
+        if(n==suits.size()-1)
+        {
+            return "Flush";
+        }
+        /*vector<int>A(13);
+        for(int i=0; i<ranks.size(); i++)
+        {
+            A[ranks[i]]++;
+        }*/
+        map<int,int>A;
+        for(auto a: ranks)A[a]++;
+        
+        //int max= *max_element(A.begin(), A.end());
+        int max=0;
+        for(int i=0; i<A.size(); i++)
+        {
+            if(A[i]>max)
+            {
+                max=A[i];
+            }
+        }
+        if(max>2)
+        {
+            return "Three of a Kind";
+        }
+        else if(max>1)
+        {
+            return "Pair";
+        }
+        else
+        {
+            return "High Card";
+        }
+        
+    }
+};
